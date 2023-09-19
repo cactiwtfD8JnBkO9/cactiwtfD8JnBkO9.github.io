@@ -3066,7 +3066,7 @@ if (!inputValue.startsWith("https://") && !inputValue.startsWith("http://")) {
                 inputValue = "https://" + inputValue;
             }
 
- var url= "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://translate.google.com/translate?sl=auto&tl=en&hl=en&u="+inputValue+"&client=webapp");
+ var url= "https://api.allorigins.win/raw?url=" + inputValue
 					
 
          var iframe = document.createElement("iframe");
