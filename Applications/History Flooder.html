@@ -1493,6 +1493,18 @@
 		background-color: rgba(20, 20, 23, 0.188);
 	}
 	
+  /* Style for the topbar */
+   #topbar {
+    position: fixed;
+    right: 0; /* Change left to right for top right position */
+    top: 0;
+    background-color: rgba(51, 51, 51, 0); /* Background color with full transparency */
+    color: white; /* Text color */
+    padding: 10px; /* Adjust the padding as needed */
+    width: 120px; /* Adjust the width as needed */
+    z-index: 1000; /* Ensure the topbar appears above other content */
+}
+
 	#icons01 a svg {
 		fill: rgba(255, 255, 255, 0.902);
 	}
@@ -1875,7 +1887,7 @@
 											<button type="submit">
 												<svg>
 													<use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
-												</svg><span class="label">Search</span></button>
+												</svg><span class="label">Start</span></button>
 										</div>
 									</div>
 									<input type="hidden" name="id" value="form01" />
@@ -1908,7 +1920,74 @@
 			</div>
 		</div>
 	</div>
+ <div id="topbar">
+     <p id="text02">Home</p>
+      <p id="text02">Applications</p>
+       <p id="text02">Settings</p>
+    </div>
+<script>
+ var elements = document.querySelectorAll("#text02"); // Get all elements with id="text02"
+    var desiredText = "Applications"; // The text you want to find
+
+    var foundElement = null;
+
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      if (element.textContent.trim() === desiredText) {
+        foundElement = element;
+        break; // Exit the loop if the element is found
+      }
+    }
+
+    if (foundElement) {
+      console.log("Found the element with text 'Applications':", foundElement);
+    } else {
+      console.log("Element not found with text 'Applications'");
+    }
+foundElement.addEventListener("click", function() {
+var currentURL = window.location.href;
+
+// Create a new URL object
+var url = new URL(currentURL);
+
+// Get the domain (hostname) from the URL
+var domain = url.hostname;
+            window.location.href = "https://" + domain + "/Applications";
+  // You can replace this alert with any action you want to perform when the label is clicked.
+});
+</script>
+<script>
+ var elements = document.querySelectorAll("#text02"); // Get all elements with id="text02"
+    var desiredText = "Home"; // The text you want to find
+
+    var foundElement = null;
+
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      if (element.textContent.trim() === desiredText) {
+        foundElement = element;
+        break; // Exit the loop if the element is found
+      }
+    }
+
+    if (foundElement) {
+      console.log("Found the element with text 'Applications':", foundElement);
+    } else {
+      console.log("Element not found with text 'Applications'");
+    }
+foundElement.addEventListener("click", function() {
+var currentURL = window.location.href;
+
+// Create a new URL object
+var url = new URL(currentURL);
+
+// Get the domain (hostname) from the URL
+var domain = url.hostname;
+            window.location.href = "https://" + domain;
+});
+</script>
 	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
 	<script>
 	(function() {
 		var on = addEventListener,
@@ -3071,16 +3150,7 @@
                 // If it matches, set the url variable to "Proxy.html"
                var inputValue = "Cacti"
             }
-					var numberValue = parseFloat(inputValue2);
-if (isNaN(numberValue)) {
-  numberValue = 10;
-}
-
-// Check if the number is above 200 and set it to 200 if necessary
-if (numberValue > 200) {
-  numberValue = 200;
-}
-location.href = "nuker.html?title=" + inputValue + "&num=" + numberValue
+location.href = "nuker.html?title=" + inputValue + "&num=" + inputValue2
       
 
 
