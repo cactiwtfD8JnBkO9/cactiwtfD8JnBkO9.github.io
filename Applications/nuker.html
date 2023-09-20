@@ -3540,7 +3540,9 @@
         var done = false;
         var x = window.location.href;
 console.log("starting flooding")
-
+if (num > 200) {
+  num = 200;
+}
         for (var i = 1; i <= num; i++) {
             history.pushState(0, 0, i === num ? x : i.toString());
             if (i === num) {
