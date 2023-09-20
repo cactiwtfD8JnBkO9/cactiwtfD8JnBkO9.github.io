@@ -3071,7 +3071,16 @@
                 // If it matches, set the url variable to "Proxy.html"
                var inputValue = "Cacti"
             }
-location.href = "nuker.html?title=" + inputValue + "&num=" + inputValue2
+					var numberValue = parseFloat(inputValue2);
+if (isNaN(numberValue)) {
+  numberValue = 10;
+}
+
+// Check if the number is above 200 and set it to 200 if necessary
+if (numberValue > 200) {
+  numberValue = 200;
+}
+location.href = "nuker.html?title=" + inputValue + "&num=" + numberValue
       
 
 
