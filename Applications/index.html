@@ -118,6 +118,13 @@
 	hgroup,
 	menu,
 	nav,
+	.separator {
+  height: 7px; /* Adjust the height to control the separator thickness */
+  background-color: transparent; /* Set the background color to transparent */
+  border: none; /* Remove any border */
+  margin: 0; /* Remove any margin */
+}
+ 
 	section {
 		display: block;
 	}
@@ -1878,12 +1885,21 @@
 										<div class="field">
 											<input type="text" name="fax" id="form01-fax" placeholder="Fax" maxlength="128" />
 										</div>
-										<div class="actions">
-											<button type="submit">
-												<svg>
-													<use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
-												</svg><span class="label">History Flooder</span></button>
-										</div>
+	<div class="actions">
+											    <button type="submit">
+        <svg>
+            <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+        </svg><span class="label">History Flooder</span>
+    </button>
+    <hr class="separator">
+    <button type="xxzzz">
+        <svg>
+            <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+        </svg><span class="label">Calculator</span>
+    </button>
+    <hr class="separator">
+</div>
+
 									</div>
 									<input type="hidden" name="id" value="form01" />
 								</form>
@@ -1990,6 +2006,20 @@ if (button) {
   button.addEventListener('click', function() {
     // Redirect to the specified URL when the button is clicked
     window.location.href = 'History Flooder.html';
+  });
+}
+</script>
+<script>
+// Find the button element based on its structure and content
+const button2 = document.querySelector('button[type=xxzzz]');
+
+// Add a click event listener to the button
+if (button2) {
+console.log("boom")
+  button2.addEventListener('click', function() {
+console.log("logg")
+    // Redirect to the specified URL when the button is clicked
+    window.location.href = 'Calculation.html';
   });
 }
 </script>
