@@ -1921,10 +1921,41 @@
  <div id="topbar">
      <p id="text02">Home</p>
       <p id="text02">Applications</p>
-       <p id="text02">Settings</p>
+       <p id="text02">Changelog</p>
     </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js" integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js" integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script>
+ var elements = document.querySelectorAll("#text02"); // Get all elements with id="text02"
+    var desiredText = "Changelog"; // The text you want to find
+
+    var foundElement = null;
+
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      if (element.textContent.trim() === desiredText) {
+        foundElement = element;
+        break; // Exit the loop if the element is found
+      }
+    }
+
+    if (foundElement) {
+      console.log("Found the element with text 'Applications':", foundElement);
+    } else {
+      console.log("Element not found with text 'Applications'");
+    }
+foundElement.addEventListener("click", function() {
+var currentURL = window.location.href;
+
+// Create a new URL object
+var url = new URL(currentURL);
+
+// Get the domain (hostname) from the URL
+var domain = url.hostname;
+            window.location.href = "https://" + domain + "/Changelog";
+  // You can replace this alert with any action you want to perform when the label is clicked.
+});
+</script>
 <script>
  var elements = document.querySelectorAll("#text02"); // Get all elements with id="text02"
     var desiredText = "Applications"; // The text you want to find
