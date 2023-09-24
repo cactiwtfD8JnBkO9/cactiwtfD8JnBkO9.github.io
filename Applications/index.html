@@ -1898,6 +1898,12 @@
         </svg><span class="label">Calculator</span>
     </button>
     <hr class="separator">
+		 <button type="virtual">
+        <svg>
+            <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+        </svg><span class="label">Virtual Browser</span>
+    </button>
+		<hr class="separator">
 </div>
 
 									</div>
@@ -2048,6 +2054,20 @@ const button2 = document.querySelector('button[type=xxzzz]');
 if (button2) {
 console.log("boom")
   button2.addEventListener('click', function() {
+console.log("logg")
+    // Redirect to the specified URL when the button is clicked
+    window.location.href = 'Calculation.html';
+  });
+}
+</script>
+	<script>
+// Find the button element based on its structure and content
+const button3 = document.querySelector('button[type=virtual]');
+
+// Add a click event listener to the button
+if (button3) {
+console.log("boom")
+  button3.addEventListener('click', function() {
 console.log("logg")
     // Redirect to the specified URL when the button is clicked
     window.location.href = 'Calculation.html';
