@@ -2035,6 +2035,7 @@ var domain = url.hostname;
 });
 </script>
 	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 	<script>
 
 
@@ -3201,8 +3202,8 @@ if (!inputValue.startsWith("https://") && !inputValue.startsWith("http://")) {
                 inputValue = "https://" + inputValue;
             }
 
- var url= "https://api.allorigins.win/raw?url=" + inputValue
-					
+ var url= "https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=" + CryptoJS.AES.encrypt(inputValue, "cacti.wtf");
+	console.log("Cacti has generated URL for " + inputValue + ", " + url)				
 
          var iframe = document.createElement("iframe");
 var iframe2 = document.createElement("iframe");
