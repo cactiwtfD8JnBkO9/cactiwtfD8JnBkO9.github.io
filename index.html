@@ -3202,7 +3202,7 @@ if (!inputValue.startsWith("https://") && !inputValue.startsWith("http://")) {
                 inputValue = "https://" + inputValue;
             }
 
- var url= "https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=" + CryptoJS.AES.encrypt(inputValue, "cacti.wtf");
+ var url= "https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy?r=" + inputValue
 	console.log("Cacti has generated URL for " + inputValue + ", " + url)				
 
          var iframe = document.createElement("iframe");
