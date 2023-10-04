@@ -1904,6 +1904,11 @@
         </svg><span class="label">Virtual Browser</span>
     </button>
 		<hr class="separator">
+				 <button type="offline">
+        <svg>
+            <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+        </svg><span class="label">Offline Version</span>
+    </button>
 </div>
 
 									</div>
@@ -2057,6 +2062,29 @@ console.log("boom")
 console.log("logg")
     // Redirect to the specified URL when the button is clicked
     window.location.href = 'Calculation.html';
+  });
+}
+</script>
+	<script>
+// Find the button element based on its structure and content
+const buttonoff = document.querySelector('button[type=offline]');
+
+// Add a click event listener to the button
+if (buttonoff) {
+console.log("boom")
+  buttonoff.addEventListener('click', function() {
+console.log("logg")
+ 
+            // Generate a random filename
+            const randomFileName = Math.random().toString(36).substring(7);
+
+            // Create a hidden anchor element to trigger the download
+            const link = document.createElement('a');
+            link.href = 'Offline-Version'; // Replace with the actual file path
+            link.download = randomFileName + '.html';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
   });
 }
 </script>
