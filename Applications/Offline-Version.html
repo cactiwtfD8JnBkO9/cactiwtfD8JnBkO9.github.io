@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -2101,6 +2100,7 @@
 	</svg>
  <div id="topbar">
      <p id="text02">Home</p>
+     <p id="text02">Services</p>
       <p id="text02">Applications</p>
        <p id="text02">Changelog</p>
 <p id="text02">Settings</p>
@@ -2163,6 +2163,32 @@ display: none;
 foundElement.addEventListener("click", function() {
 
             window.location.href = "#changelog";
+  // You can replace this alert with any action you want to perform when the label is clicked.
+});
+</script>
+
+<script>
+ var elements = document.querySelectorAll("#text02"); // Get all elements with id="text02"
+    var desiredText = "Services"; // The text you want to find
+
+    var foundElement = null;
+
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      if (element.textContent.trim() === desiredText) {
+        foundElement = element;
+        break; // Exit the loop if the element is found
+      }
+    }
+
+    if (foundElement) {
+      console.log("Found the element with text 'Applications':", foundElement);
+    } else {
+      console.log("Element not found with text 'Applications'");
+    }
+foundElement.addEventListener("click", function() {
+
+            window.location.href = "#services";
   // You can replace this alert with any action you want to perform when the label is clicked.
 });
 </script>
@@ -2516,6 +2542,244 @@ setInterval(w,1000)
 	
 				</section>
 
+
+<section id="services-section">
+<h2 id="text08" class="style1">Services</h2>
+<p id="text09" class="style2">Select any Service to get Started.</p>
+
+<ul id="buttonslol" class="style1 buttons">
+  <li>
+    <a href="javascript:void(0);" class="button n01" id="Google">
+      <svg>
+        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+      </svg>
+      <span class="label">Google</span>
+    </a>
+  </li>
+
+<li>
+    <a href="javascript:void(0);" class="button n01" id="Youtube">
+      <svg>
+        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+      </svg>
+      <span class="label">Youtube</span>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:void(0);" class="button n01" id="Spotify">
+      <svg>
+        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+      </svg>
+      <span class="label">Spotify</span>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:void(0);" class="button n01" id="Roblox">
+      <svg>
+        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+      </svg>
+      <span class="label">Roblox</span>
+    </a>
+  </li>
+ <li>
+    <a href="javascript:void(0);" class="button n01" id="Minecraft">
+      <svg>
+        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+      </svg>
+      <span class="label">Minecraft</span>
+    </a>
+  </li>
+</ul>
+
+	
+				</section>
+
+<script>
+const Minecraft= document.getElementById("Minecraft");
+Minecraft.addEventListener("click", () => {
+// Create a new iframe element
+var iframe = document.createElement('iframe');
+iframe.style.width = '100vw'; // 100% of the viewport width
+iframe.style.height = '100vh'; // 100% of the viewport height
+
+// Set the z-index to 9999
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+// Position the iframe absolutely at the top left corner of the viewport
+iframe.style.position = 'fixed';
+iframe.style.top = '0';
+iframe.style.left = '0';
+
+// Remove any border and padding
+iframe.style.border = 'none';
+iframe.style.padding = '0';
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+iframe.src = 'https://rtrade.github.io/mc/eaglercraft1.5.2/';
+
+// Add the iframe to the document's body or any other desired container element
+document.body.appendChild(iframe);
+
+
+});
+</script>
+
+<script>
+const Spotify= document.getElementById("Spotify");
+Spotify.addEventListener("click", () => {
+// Create a new iframe element
+var iframe = document.createElement('iframe');
+iframe.style.width = '100vw'; // 100% of the viewport width
+iframe.style.height = '100vh'; // 100% of the viewport height
+
+// Set the z-index to 9999
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+// Position the iframe absolutely at the top left corner of the viewport
+iframe.style.position = 'fixed';
+iframe.style.top = '0';
+iframe.style.left = '0';
+
+// Remove any border and padding
+iframe.style.border = 'none';
+iframe.style.padding = '0';
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+iframe.src = 'https://cacti.wtf/Services/Spotify';
+
+// Add the iframe to the document's body or any other desired container element
+document.body.appendChild(iframe);
+
+
+});
+</script>
+
+
+
+<script>
+const Google= document.getElementById("Google");
+Google.addEventListener("click", () => {
+// Create a new iframe element
+var iframe = document.createElement('iframe');
+iframe.style.width = '100vw'; // 100% of the viewport width
+iframe.style.height = '100vh'; // 100% of the viewport height
+
+// Set the z-index to 9999
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+// Position the iframe absolutely at the top left corner of the viewport
+iframe.style.position = 'fixed';
+iframe.style.top = '0';
+iframe.style.left = '0';
+
+// Remove any border and padding
+iframe.style.border = 'none';
+iframe.style.padding = '0';
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+iframe.src = 'https://google.com/?igu=1';
+
+// Add the iframe to the document's body or any other desired container element
+document.body.appendChild(iframe);
+
+
+});
+</script>
+
+<script>
+const Youtube= document.getElementById("Youtube");
+Youtube.addEventListener("click", () => {
+// Create a new iframe element
+var iframe = document.createElement('iframe');
+iframe.style.width = '101vw'; // 100% of the viewport width
+iframe.style.height = '100vh'; // 100% of the viewport height
+
+// Set the z-index to 9999
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+// Position the iframe absolutely at the top left corner of the viewport
+iframe.style.position = 'fixed';
+iframe.style.top = '0';
+iframe.style.left = '0';
+
+// Remove any border and padding
+iframe.style.border = 'none';
+iframe.style.padding = '0';
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+iframe.src = 'https://api.allorigins.win/raw?url=https://youtube.com';
+
+// Add the iframe to the document's body or any other desired container element
+document.body.appendChild(iframe);
+
+
+});
+</script>
+
+<script>
+const Roblox= document.getElementById("Roblox");
+Roblox.addEventListener("click", () => {
+// Create a new iframe element
+var iframe = document.createElement('iframe');
+iframe.style.width = '100vw'; // 100% of the viewport width
+iframe.style.height = '100vh'; // 100% of the viewport height
+
+// Set the z-index to 9999
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+// Position the iframe absolutely at the top left corner of the viewport
+iframe.style.position = 'fixed';
+iframe.style.top = '0';
+iframe.style.left = '0';
+
+// Remove any border and padding
+iframe.style.border = 'none';
+iframe.style.padding = '0';
+iframe.style.zIndex = '9999';
+
+// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+
+
+iframe.src = 'https://beta7.apktbg.com/class?domain=Roblox';
+
+// Add the iframe to the document's body or any other desired container element
+document.body.appendChild(iframe);
+
+
+});
+</script>
+
+
+
+
+
 				<section id="home-section">
 					
 					
@@ -2543,6 +2807,7 @@ setInterval(w,1000)
 					</form>
 					
 				</section>
+
 <script>
 const calculateButton3= document.getElementById("wwwg3");
 calculateButton3.addEventListener("click", () => {
@@ -2600,7 +2865,7 @@ setTimeout(function() {
 
 				<section id="changelog-section">
 					<h2 id="text08" class="style1">Changelog</h2>
-<p id="text09" class="style2">v1.0.8 <br> Adding Settings <br> Added Rammerhead Support<br> Added Calculator<br> Added Virtual Browser <br> Added Applications </p>
+<p id="text09" class="style2">v1.0.8 <br> Added "Minecraft" Service<br> Added "Spotify" & "Roblox" Service<br> Added "Google" & "Youtube" Service<br> Added Services<br> Added Custom Title<br> Added Panic Link<br> Added Panic Keybind<br> Added Settings <br> Added Rammerhead Support<br> Added Calculator<br> Added Virtual Browser <br> Added Applications </p>
 					<p id="text09" class="style2">v1.0.0 <br> Compiled Cacti into one file <br> Added Smoother Transitions <br> Added Notifications<br>Added Sidebar<br> Added Home Webpage<br> Added Fresh new Interface<br> Added Web Proxy<br>Removed Loading Interface</p>
 					 <ul id="buttons01" class="style1 buttons"><li><a href="#virbrowser" class="button n01"  type = "Second"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">Back to Home</span></a></li></ul></section></div></div></div>
 
@@ -4137,6 +4402,9 @@ notyf.success({
   });
 
 </script>
+
+
+
 </body>
 
 </html>
