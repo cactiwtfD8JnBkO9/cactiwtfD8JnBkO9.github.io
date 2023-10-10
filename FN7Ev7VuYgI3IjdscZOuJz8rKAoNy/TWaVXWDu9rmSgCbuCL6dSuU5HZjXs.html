@@ -97,7 +97,7 @@ var modifiedHtml = data.replace(urlRegex, function(match, capturedUrl) {
 
 // Check if the 'buildFxNb' parameter is missing or not equal to 'cacti'
 
-	 if (captuedUrl.indexOf(".css") === -1) {
+	 if (capturedUrl.indexOf(".css") === -1) {
  
 	console.log(capturedUrl)
     var encryptedUrl = CryptoJS.AES.encrypt(capturedUrl, 'cacti.wtf').toString();
