@@ -83,7 +83,7 @@ console.log(URL)
     return match; // Return the original match unchanged
   } else {
     capturedUrl = 'https://api.allorigins.win/raw?url=' + capturedUrl; // Add 'UTF8' to the captured URL
-    return 'href="' + capturedUrl + '"'; // Return the modified URL
+    return 'href="' + UTF8 + '/' + capturedUrl + '"'; // Return the modified URL
   }
 });
 			
@@ -96,14 +96,17 @@ var modifiedHtml = data.replace(urlRegex, function(match, capturedUrl) {
 	const queryParams = new URLSearchParams(capturedUrl);
 
 // Check if the 'buildFxNb' parameter is missing or not equal to 'cacti'
-if (!queryParams.has('api.allorigins') || queryParams.get('api.allorigins') !== '.win') {
+
+	 if (url.indexOf(".css") === -1) {
+ 
 	console.log(capturedUrl)
     var encryptedUrl = CryptoJS.AES.encrypt(capturedUrl, 'cacti.wtf').toString();
     return 'href="https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=' + encryptedUrl + '"';
-} else {
-  return capturedUrl
-}
+  } else {
+    return capturedUrl
+  }
 	
+
 
           
   
