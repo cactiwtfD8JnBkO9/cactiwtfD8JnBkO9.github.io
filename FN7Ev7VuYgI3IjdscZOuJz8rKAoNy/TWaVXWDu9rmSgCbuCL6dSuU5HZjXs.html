@@ -57,9 +57,8 @@ var URL = "https://api.allorigins.win/raw?url=" + UTF8
                           var urlRegex = /href=["'](https?:\/\/.*?)["']/g;
 
 // Replace each URL with the modified version
-var modifiedHtml = data.replace(urlRegex, 'href="https://api.allorigins.win/raw?url=$1"');
-
-                          
+var modifiedHtml = data.replace(urlRegex, 'href=' + "https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=" + CryptoJS.AES.encrypt(Input, '$1').toString());
+      
                     document.write(modifiedHtml)
                 })
           
