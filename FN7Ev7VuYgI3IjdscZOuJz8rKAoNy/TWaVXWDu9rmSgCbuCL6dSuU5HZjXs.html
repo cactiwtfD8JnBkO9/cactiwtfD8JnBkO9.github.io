@@ -51,7 +51,7 @@ var URL = "https://api.allorigins.win/raw?url=" + UTF8
             }
       fetch(URL)
                 .then(function (response) {
-                    return response
+                    return response.text();
                 })
                 .then(function (data) {
                     document.write(data)
