@@ -54,7 +54,13 @@ var URL = "https://api.allorigins.win/raw?url=" + UTF8
                     return response.text();
                 })
                 .then(function (data) {
-                    document.write(data)
+                          var urlRegex = /href=["'](https?:\/\/.*?)["']/g;
+
+// Replace each URL with the modified version
+var modifiedHtml = data.replace(urlRegex, 'href="https://api.allorigins.win/raw?url=$1"');
+
+                          
+                    document.write(modifiedHtml)
                 })
           
 //var iframe = document.createElement("iframe");
