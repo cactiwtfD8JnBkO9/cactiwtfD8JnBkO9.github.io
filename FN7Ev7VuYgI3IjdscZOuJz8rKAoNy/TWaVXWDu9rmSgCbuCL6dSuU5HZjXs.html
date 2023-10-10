@@ -1,5 +1,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 
+
+<head>
+	<title>Launching Proxy..</title>
+</head>
 <br><br>
 <script>
 
@@ -72,9 +76,18 @@ console.log(URL)
                 })
                 .then(function (data) {
                        var urlRegex = /href=["'](https?:\/\/.*?)["']/g;
+                          var httpRegex = /^(http:\/\/|https:\/\/)/;
 
 // Replace each URL with the modified version
 var modifiedHtml = data.replace(urlRegex, function(match, capturedUrl) {
+
+// Check if capturedURL contains http:// or https://
+if (httpRegex.test(capturedUrl)) {
+
+} else {
+ capturedUrl = UTF8 + capturedUrl
+}
+          
     var encryptedUrl = CryptoJS.AES.encrypt(capturedUrl, 'cacti.wtf').toString();
     return 'href="https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=' + encryptedUrl + '"';
 });
