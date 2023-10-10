@@ -77,16 +77,24 @@ console.log(URL)
                 .then(function (data) {
                        var urlRegex = /href=["'](https?:\/\/.*?)["']/g;
                           var httpRegex = /^(http:\/\/|https:\/\/)/;
+			var cssRegex = /href="([^"]+)"/;
 
-// Replace each URL with the modified version
-var modifiedHtml = data.replace(urlRegex, function(match, capturedUrl) {
-
-// Check if capturedURL contains http:// or https://
-if (httpRegex.test(capturedUrl)) {
+			var csspatch = data.replace(cssRegex, function(match, capturedUrl) {
+				if (httpRegex.test(capturedUrl)) {
 
 } else {
  capturedUrl = UTF8 + capturedUrl
 }
+				
+				});
+			
+
+			data = csspatch
+			
+// Replace each URL with the modified version
+var modifiedHtml = data.replace(urlRegex, function(match, capturedUrl) {
+
+
           
     var encryptedUrl = CryptoJS.AES.encrypt(capturedUrl, 'cacti.wtf').toString();
     return 'href="https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=' + encryptedUrl + '"';
