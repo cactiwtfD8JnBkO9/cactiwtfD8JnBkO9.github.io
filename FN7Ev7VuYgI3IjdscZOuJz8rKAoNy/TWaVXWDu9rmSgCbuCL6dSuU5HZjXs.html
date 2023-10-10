@@ -77,16 +77,15 @@ console.log(URL)
                 .then(function (data) {
                        var urlRegex = /href=["'](https?:\/\/.*?)["']/g;
                           var httpRegex = /^(http:\/\/|https:\/\/)/;
-			var cssRegex = /href="([^"]+)"/;
-
-			var csspatch = data.replace(cssRegex, function(match, capturedUrl) {
-				if (httpRegex.test(capturedUrl)) {
-
-} else {
- capturedUrl = UTF8 + capturedUrl
-}
-				
-				});
+			var cssRegex = /href="([^"]+)"/g; 
+		var csspatch = data.replace(cssRegex, function(match, capturedUrl) {
+  if (httpRegex.test(capturedUrl)) {
+    return match; // Return the original match unchanged
+  } else {
+    capturedUrl = UTF8 + capturedUrl; // Add 'UTF8' to the captured URL
+    return 'href="' + capturedUrl + '"'; // Return the modified URL
+  }
+});
 			
 
 			data = csspatch
