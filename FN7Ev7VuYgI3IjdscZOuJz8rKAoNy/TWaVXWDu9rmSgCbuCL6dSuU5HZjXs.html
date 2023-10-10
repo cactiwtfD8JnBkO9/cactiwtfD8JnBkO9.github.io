@@ -49,6 +49,8 @@ var URL = "https://api.allorigins.win/raw?url=" + UTF8
                 // If it matches, set the url variable to "Proxy.html"
                 var URL = "https://krunker.io";
             }
+
+          console.log(URL)
       fetch(URL)
                 .then(function (response) {
                     return response.text();
