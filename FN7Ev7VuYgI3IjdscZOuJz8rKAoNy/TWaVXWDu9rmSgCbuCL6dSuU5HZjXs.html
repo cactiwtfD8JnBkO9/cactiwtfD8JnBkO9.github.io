@@ -50,7 +50,22 @@ var URL = "https://api.allorigins.win/raw?url=" + UTF8
                 var URL = "https://krunker.io";
             }
 
-          console.log(URL)
+if (
+  URL === "https://google.com/?igu=1" ||
+  URL === "https://krunker.io"
+) {
+  var iframe = document.createElement("iframe");
+  iframe.src = URL;
+  iframe.style.position = "fixed";
+  iframe.style.top = "0";
+  iframe.style.left = "0";
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.style.border = "none"; // Remove the border if needed
+
+  document.body.appendChild(iframe);
+} else {
+console.log(URL)
       fetch(URL)
                 .then(function (response) {
                     return response.text();
@@ -67,21 +82,10 @@ var modifiedHtml = data.replace(urlRegex, function(match, capturedUrl) {
                     document.write(modifiedHtml)
                 })
           
-//var iframe = document.createElement("iframe");
-
-// Set the src attribute to the desired URL
-
-//iframe.src = URL
-
-// Set the iframe's position, width, and height to cover the entire screen
-//iframe.style.position = "fixed";
-//iframe.style.top = "0";
-//iframe.style.left = "0";
-//iframe.style.width = "100%";
-//iframe.style.height = "100%";
-//iframe.style.border = "none"; // Remove the border if needed
-
-// Append the iframe to the document body
-//document.body.appendChild(iframe);
+}
+          
+          
+          
+          
 
 </script>
