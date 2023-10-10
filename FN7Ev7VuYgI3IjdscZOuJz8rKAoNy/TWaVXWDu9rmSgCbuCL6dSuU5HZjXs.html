@@ -49,23 +49,30 @@ var URL = "https://api.allorigins.win/raw?url=" + UTF8
                 // If it matches, set the url variable to "Proxy.html"
                 var URL = "https://krunker.io";
             }
-     
-
-var iframe = document.createElement("iframe");
+      fetch(URL)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                          console.log("listening on " + data.title)
+                    document.write(data.title)
+                })
+          
+//var iframe = document.createElement("iframe");
 
 // Set the src attribute to the desired URL
 
-iframe.src = URL
+//iframe.src = URL
 
 // Set the iframe's position, width, and height to cover the entire screen
-iframe.style.position = "fixed";
-iframe.style.top = "0";
-iframe.style.left = "0";
-iframe.style.width = "100%";
-iframe.style.height = "100%";
-iframe.style.border = "none"; // Remove the border if needed
+//iframe.style.position = "fixed";
+//iframe.style.top = "0";
+//iframe.style.left = "0";
+//iframe.style.width = "100%";
+//iframe.style.height = "100%";
+//iframe.style.border = "none"; // Remove the border if needed
 
 // Append the iframe to the document body
-document.body.appendChild(iframe);
+//document.body.appendChild(iframe);
 
 </script>
