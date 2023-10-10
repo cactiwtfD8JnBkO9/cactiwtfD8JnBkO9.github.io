@@ -103,7 +103,7 @@ var modifiedHtml = data.replace(urlRegex, function(match, capturedUrl) {
     var encryptedUrl = CryptoJS.AES.encrypt(capturedUrl, 'cacti.wtf').toString();
     return 'href="https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=' + encryptedUrl + '"';
   } else {
-    return capturedUrl
+    return 'href="' + capturedUrl + '"'
   }
 	
 
