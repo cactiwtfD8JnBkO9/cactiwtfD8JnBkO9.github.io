@@ -1,0 +1,55 @@
+<head>
+  <title>Local Version</title>
+</head>
+<body>
+<script>
+
+        // Function to parse the query string and retrieve a parameter by name
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Set the page title based on the 'title' parameter
+        var titleParam = getParameterByName('title');
+   var redirectParam = getParameterByName('redirect');
+        if (titleParam) {
+            document.title = titleParam;
+        }
+
+        // Get the 'num' parameter and convert it to a number
+        var numParam = getParameterByName('num');
+        var num = numParam ? parseInt(numParam, 10) : 10; // Default value is 10 if 'num' is not provided
+
+        // JavaScript code with fixes
+        var done = false;
+        var x = window.location.href;
+console.log("starting flooding")
+if (num > 199) {
+  num = 199;
+}
+        for (var i = 1; i <= num; i++) {
+            history.pushState(0, 0, i === num ? x : i.toString());
+            if (i === num) {
+                done = true;
+            }
+        }
+
+        if (done === true) {
+            // Redirect to success.html when done is true
+var currentURL = window.location.href;
+
+// Create a new URL object
+var url = new URL(currentURL);
+
+// Get the domain (hostname) from the URL
+var domain = url.hostname;
+            window.location.href = redirectParam
+        }
+</script>
+</body>
