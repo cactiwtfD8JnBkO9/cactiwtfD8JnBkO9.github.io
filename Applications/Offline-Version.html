@@ -3,6 +3,7 @@
 
 <head>
 	<title>Cacti</title>
+<link rel="icon" href="https://cacti.wtf/Images/CactiLogo.png" type="image/png">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<meta name="color-scheme" content="light only" />
@@ -2521,20 +2522,28 @@ setInterval(w,1000)
 <p id="text09" class="style2">Select any Application to get Started.</p>
 
 <ul id="buttonslol" class="style1 buttons">
+  <li>
+    <a href="#history" class="button n01" type="Second3">
+      <svg>
+        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+      </svg>
+      <span class="label">History Flooder</span>
+    </a>
+  </li>
+  <li>
+    <a href="#cloaker" class="button n01" type="Second">
+      <svg>
+        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+      </svg>
+      <span class="label">Tab Cloaker</span>
+    </a>
+  </li>
 <li>
     <a href="#calculation" class="button n01" type="Second2">
       <svg>
         <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
       </svg>
       <span class="label">Calculator</span>
-    </a>
-  </li>
-  <li>
-    <a href="#browser" class="button n01" type="Second">
-      <svg>
-        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
-      </svg>
-      <span class="label">Virtual Browser</span>
     </a>
   </li>
 </ul>
@@ -2562,7 +2571,7 @@ setInterval(w,1000)
       <svg>
         <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
       </svg>
-      <span class="label">Youtube</span>
+      <span class="label">ChatGPT</span>
     </a>
   </li>
   <li>
@@ -2570,23 +2579,16 @@ setInterval(w,1000)
       <svg>
         <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
       </svg>
-      <span class="label">Spotify</span>
+      <span class="label">Krunker.io</span>
     </a>
   </li>
-  <li>
-    <a href="javascript:void(0);" class="button n01" id="Roblox">
-      <svg>
-        <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
-      </svg>
-      <span class="label">Roblox</span>
-    </a>
-  </li>
+
  <li>
-    <a href="javascript:void(0);" class="button n01" id="Minecraft">
+    <a href="javascript:void(0);" class="button n01" id="crazycenso">
       <svg>
         <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
       </svg>
-      <span class="label">Minecraft</span>
+      <span class="label">CrazyGames</span>
     </a>
   </li>
 </ul>
@@ -2595,36 +2597,23 @@ setInterval(w,1000)
 				</section>
 
 <script>
-const Minecraft= document.getElementById("Minecraft");
-Minecraft.addEventListener("click", () => {
-// Create a new iframe element
-var iframe = document.createElement('iframe');
-iframe.style.width = '100vw'; // 100% of the viewport width
-iframe.style.height = '100vh'; // 100% of the viewport height
-
-// Set the z-index to 9999
-iframe.style.zIndex = '9999';
-
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+document.getElementById("crazycenso").addEventListener("click", () => {
+console.log("0/2 - attempting to boot up proxy")
+var iframe = document.createElement("iframe");
 
 
-// Position the iframe absolutely at the top left corner of the viewport
-iframe.style.position = 'fixed';
-iframe.style.top = '0';
-iframe.style.left = '0';
+     iframe.setAttribute("src", "https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=U2FsdGVkX19KtmLNxJMKxiHUxjuN6q7jj5kbyufiSB4+Ds46Ve0I/a82qJCKmJii");
+      iframe.setAttribute("id", "rusic-modal");
+      iframe.setAttribute("style", "position: fixed; z-index: 999999; width: 1375px; height: 675px; right: 0px; top: 0px; border: 0px solid #8834af; overflow: hidden; background-color: #fff;");
+    console.log("1/2 - completing task")
 
-// Remove any border and padding
-iframe.style.border = 'none';
-iframe.style.padding = '0';
-iframe.style.zIndex = '9999';
+      var body = document.getElementsByTagName("body")[0];
+      body.appendChild(iframe);
 
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+console.log("2/2 completed task")
 
 
-iframe.src = 'https://rtrade.github.io/mc/eaglercraft1.5.2/';
 
-// Add the iframe to the document's body or any other desired container element
-document.body.appendChild(iframe);
 
 
 });
@@ -2634,33 +2623,18 @@ document.body.appendChild(iframe);
 const Spotify= document.getElementById("Spotify");
 Spotify.addEventListener("click", () => {
 // Create a new iframe element
-var iframe = document.createElement('iframe');
-iframe.style.width = '100vw'; // 100% of the viewport width
-iframe.style.height = '100vh'; // 100% of the viewport height
 
-// Set the z-index to 9999
-iframe.style.zIndex = '9999';
-
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+var iframe = document.createElement("iframe");
 
 
-// Position the iframe absolutely at the top left corner of the viewport
-iframe.style.position = 'fixed';
-iframe.style.top = '0';
-iframe.style.left = '0';
+     iframe.setAttribute("src", "https://cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=U2FsdGVkX18iXsQ+h2iYuVjnVDZATAhxEaBeTPdrEa+YKC1kkibYlSrQ3tfKPQzu");
+      iframe.setAttribute("id", "rusic-modal");
+      iframe.setAttribute("style", "position: fixed; z-index: 999999; width: 1375px; height: 675px; right: 0px; top: 0px; border: 0px solid #8834af; overflow: hidden; background-color: #fff;");
+    
 
-// Remove any border and padding
-iframe.style.border = 'none';
-iframe.style.padding = '0';
-iframe.style.zIndex = '9999';
+      var body = document.getElementsByTagName("body")[0];
+      body.appendChild(iframe);
 
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
-
-
-iframe.src = 'https://cacti.wtf/Services/Spotify';
-
-// Add the iframe to the document's body or any other desired container element
-document.body.appendChild(iframe);
 
 
 });
@@ -2671,34 +2645,18 @@ document.body.appendChild(iframe);
 <script>
 const Google= document.getElementById("Google");
 Google.addEventListener("click", () => {
-// Create a new iframe element
-var iframe = document.createElement('iframe');
-iframe.style.width = '100vw'; // 100% of the viewport width
-iframe.style.height = '100vh'; // 100% of the viewport height
-
-// Set the z-index to 9999
-iframe.style.zIndex = '9999';
-
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
 
 
-// Position the iframe absolutely at the top left corner of the viewport
-iframe.style.position = 'fixed';
-iframe.style.top = '0';
-iframe.style.left = '0';
-
-// Remove any border and padding
-iframe.style.border = 'none';
-iframe.style.padding = '0';
-iframe.style.zIndex = '9999';
-
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+var iframe = document.createElement("iframe");
 
 
-iframe.src = 'https://google.com/?igu=1';
+     iframe.setAttribute("src", "https://google.com/?igu=1");
+      iframe.setAttribute("id", "rusic-modal");
+      iframe.setAttribute("style", "position: fixed; z-index: 999999; width: 1375px; height: 675px; right: 0px; top: 0px; border: 0px solid #8834af; overflow: hidden; background-color: #fff;");
+    
 
-// Add the iframe to the document's body or any other desired container element
-document.body.appendChild(iframe);
+      var body = document.getElementsByTagName("body")[0];
+      body.appendChild(iframe);
 
 
 });
@@ -2708,71 +2666,122 @@ document.body.appendChild(iframe);
 const Youtube= document.getElementById("Youtube");
 Youtube.addEventListener("click", () => {
 // Create a new iframe element
-var iframe = document.createElement('iframe');
-iframe.style.width = '101vw'; // 100% of the viewport width
-iframe.style.height = '100vh'; // 100% of the viewport height
 
-// Set the z-index to 9999
-iframe.style.zIndex = '9999';
-
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+var iframe = document.createElement("iframe");
 
 
-// Position the iframe absolutely at the top left corner of the viewport
-iframe.style.position = 'fixed';
-iframe.style.top = '0';
-iframe.style.left = '0';
+     iframe.setAttribute("src", "https://chatg-pt.org/");
+      iframe.setAttribute("id", "rusic-modal");
+      iframe.setAttribute("style", "position: fixed; z-index: 999999; width: 1375px; height: 675px; right: 0px; top: 0px; border: 0px solid #8834af; overflow: hidden; background-color: #fff;");
+    
 
-// Remove any border and padding
-iframe.style.border = 'none';
-iframe.style.padding = '0';
-iframe.style.zIndex = '9999';
-
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+      var body = document.getElementsByTagName("body")[0];
+      body.appendChild(iframe);
 
 
-iframe.src = 'https://api.allorigins.win/raw?url=https://youtube.com';
 
-// Add the iframe to the document's body or any other desired container element
-document.body.appendChild(iframe);
 
 
 });
 </script>
 
+
+
+<section id="cloaker-section">
+					<h2 id="text08" class="style1">Tab Cloaker</h2>
+<p id="text09" class="style2">Simply type what website you wish to cloak and click search!</p>
+<form enctype="multipart/form-data" id="form02" method="post" class="style1">
+
+						<div class="inner">
+							<div class="field">
+								<input type="text" name="your-email" id="form02-your-SearchingUrl" placeholder="Enter URL or Website Domain." maxlength="128" required />
+							</div>
+
+							
+							 <ul id="buttons01" class="style1 buttons">
+    <li><a id="CloakButton" href = "javascript:void(0);" class="button n01"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">search the web</span></a></li>
+  </ul>
+						</div>
+						<input type="hidden" name="id" value="form02" />
+					</form>
+
+</ul>
+
+				</section>
+
+<section id="history-section">
+					<h2 id="text08" class="style1">History Flooder</h2>
+<p id="text09" class="style2">History Flooder, Nuke your entire history in a few seconds with ease.</p>
+<form enctype="multipart/form-data" id="form02" method="post" class="style1">
+
+						<div class="inner">
+							<div class="field">
+								<input type="text" name="your-email" id="form02-your-HistoryUrl" placeholder="Custom URL Name" maxlength="128" required />
+							</div>
+<div class="field">
+								<input type="text" name="your-email" id="form02-your-HistoryAmm" placeholder="History Flood Amount" maxlength="128" required />
+							</div>
+
+							
+							 <ul id="buttons01" class="style1 buttons">
+    <li><a id="StartFlood" href = "javascript:void(0);" class="button n01"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">start</span></a></li>
+  </ul>
+						</div>
+						<input type="hidden" name="id" value="form02" />
+					</form>
+
+</ul>
+
+				</section>
+
 <script>
-const Roblox= document.getElementById("Roblox");
-Roblox.addEventListener("click", () => {
-// Create a new iframe element
-var iframe = document.createElement('iframe');
-iframe.style.width = '100vw'; // 100% of the viewport width
-iframe.style.height = '100vh'; // 100% of the viewport height
+const calculateButton9= document.getElementById("StartFlood");
+calculateButton9.addEventListener("click", () => {
+  var inputField = document.getElementById("form02-your-HistoryUrl").value;
+  var inputField2 = document.getElementById("form02-your-HistoryAmm").value;
+window.open("https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/xkwOMmMZDXfLOMpVXKnDlm4NvXdTy?title=" + inputField + "&num=" + inputField2 + "&redirect=file:///")
+});
+</script>
 
-// Set the z-index to 9999
-iframe.style.zIndex = '9999';
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
+<script>
+const ButtonFor= document.getElementById("CloakButton");
+ButtonFor.addEventListener("click", () => {
+var Input= document.getElementById("form02-your-SearchingUrl").value;
+
+if (!Input.startsWith("http://") && !Input.startsWith("https://")) {
+  // Add "https://" to the start of inputfield
+  Input = "https://" + Input;
+}
+
+ var encrypted = CryptoJS.AES.encrypt(Input, 'cacti.wtf').toString();
+
+var cactiLinks = [
+"routerwifiproblems.clickcosmo.us",
+"functionalazureservice.crabdance.com",
+"dancingaroundpeace.oops.wtf",
+"slickafraidclub.sammarkham.club",
+"speedyinternetfix.chickenkiller.com",
+"musicloversparadise.ignorelist.com",
+"cloudcomputingwizard.jumpingcrab.com",
+"jetsettersworldwide.microtract.xyz",
+"traveladventuresgalore.serverpit.com",
+"fitnessenthusiasts.panel-laboralcj.gob.mx",
+"seth-robispain.lolomgwtfbbq.info",
+"justdeleteplaygroundhub.pagostepeapulco.gob.mx",
+"foreignartisticdreamers.qualitypoolsboulder.com",
+"alienliteraryexperts.spacetechnology.net",
+"cacti.wtf"
+];
+
+  const randomIndex = Math.floor(Math.random() * cactiLinks.length);
+  const RandomCactiLink = cactiLinks[randomIndex];
 
 
-// Position the iframe absolutely at the top left corner of the viewport
-iframe.style.position = 'fixed';
-iframe.style.top = '0';
-iframe.style.left = '0';
-
-// Remove any border and padding
-iframe.style.border = 'none';
-iframe.style.padding = '0';
-iframe.style.zIndex = '9999';
-
-// Set the source URL for the iframe (replace 'your_url_here' with the actual URL you want to load)
 
 
-iframe.src = 'https://beta7.apktbg.com/class?domain=Roblox';
-
-// Add the iframe to the document's body or any other desired container element
-document.body.appendChild(iframe);
-
-
+window.open("http://" + RandomCactiLink + "/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=" + encrypted)
 });
 </script>
 
@@ -2817,6 +2826,8 @@ if (!inputField.startsWith("http://") && !inputField.startsWith("https://")) {
   inputField = "https://" + inputField;
 }
 
+ var encrypted = CryptoJS.AES.encrypt(inputField, 'cacti.wtf').toString();
+
 
 
 var better = "https://api.allorigins.win/raw?url=" + inputField
@@ -2834,27 +2845,24 @@ if (
 					  var a, b, c;
   c = better;
 
-var iframe = document.createElement("iframe");
+const iframe = document.createElement("iframe");
 
+iframe.style.position = "fixed";
+iframe.style.zIndex = "999999";
+iframe.style.width = "100%"; // Use percentage for width
+iframe.style.height = "100%"; // Use percentage for height
+iframe.style.right = "0";
+iframe.style.top = "0";
+iframe.style.border = "0";
+iframe.style.overflow = "hidden";
+iframe.style.backgroundColor = "#fff";
 
-     iframe.setAttribute("src", c);
-      iframe.setAttribute("id", "rusic-modal");
-      iframe.setAttribute("style", "position: fixed; z-index: 999999; width: 1375px; height: 675px; right: 0px; top: 0px; border: 0px solid #8834af; overflow: hidden; background-color: #fff;");
-    
+iframe.setAttribute("id", "rusic-modal");
 
-      var body = document.getElementsByTagName("body")[0];
-      body.appendChild(iframe);
-  
-var rusicModal = document.getElementById("rusic-modal");
- rusicModal.style.display = "none";
+iframe.setAttribute("src", "https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=" + encrypted);
 
-
-
-
-// Show the iframe after 5 seconds
-setTimeout(function() {
- rusicModal.style.display = "block";
-}, 5000);
+// Append the iframe to the body of the document
+document.body.appendChild(iframe);
 
 
 
@@ -2865,7 +2873,7 @@ setTimeout(function() {
 
 				<section id="changelog-section">
 					<h2 id="text08" class="style1">Changelog</h2>
-<p id="text09" class="style2">v1.0.8 <br> Added "Minecraft" Service<br> Added "Spotify" & "Roblox" Service<br> Added "Google" & "Youtube" Service<br> Added Services<br> Added Custom Title<br> Added Panic Link<br> Added Panic Keybind<br> Added Settings <br> Added Rammerhead Support<br> Added Calculator<br> Added Virtual Browser <br> Added Applications </p>
+<p id="text09" class="style2">v1.1.4 <br>Added History Flooder<br>Added Scaling For Devices<br>Added Faster Proxy Speeds<br>Added Special Encryption<br>Added HREF Support<br>Added CSS Support for certain websites<br>Added Tab Cloaker<br>Revamped Services<br><br>v1.0.8 <br> Added "Minecraft" Service<br> Added "Spotify" & "Roblox" Service<br> Added "Google" & "Youtube" Service<br> Added Services<br> Added Custom Title<br> Added Panic Link<br> Added Panic Keybind<br> Added Settings <br> Added Rammerhead Support<br> Added Calculator<br> Added Virtual Browser <br> Added Applications </p>
 					<p id="text09" class="style2">v1.0.0 <br> Compiled Cacti into one file <br> Added Smoother Transitions <br> Added Notifications<br>Added Sidebar<br> Added Home Webpage<br> Added Fresh new Interface<br> Added Web Proxy<br>Removed Loading Interface</p>
 					 <ul id="buttons01" class="style1 buttons"><li><a href="#virbrowser" class="button n01"  type = "Second"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">Back to Home</span></a></li></ul></section></div></div></div>
 
@@ -3924,6 +3932,8 @@ if (!inputField.startsWith("http://") && !inputField.startsWith("https://")) {
   inputField = "https://" + inputField;
 }
 
+ var encrypted = CryptoJS.AES.encrypt(inputField, 'cacti.wtf').toString();
+
 
 
 var better = "https://api.allorigins.win/raw?url=" + inputField
@@ -3941,24 +3951,20 @@ if (
 					  var a, b, c;
   c = better;
 
-var iframe = document.createElement("iframe");
+const iframe = document.createElement("iframe");
 
+// Set the iframe properties
+iframe.src = "https://cacti.wtf" + "/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=" + inputField // Replace with the URL you want to load
+iframe.style.position = "fixed";
+iframe.style.top = "0";
+iframe.style.left = "0";
+iframe.style.width = "100%";
+iframe.style.height = "100%";
+iframe.style.zIndex = "9999";
 
-     iframe.setAttribute("src", c);
-      iframe.setAttribute("id", "rusic-modal");
-      iframe.setAttribute("style", "position: fixed; z-index: 999999; width: 1375px; height: 675px; right: 0px; top: 0px; border: 0px solid #8834af; overflow: hidden; background-color: #fff;");
-    
+// Append the iframe to the body of the document
+document.body.appendChild(iframe);
 
-      var body = document.getElementsByTagName("body")[0];
-      body.appendChild(iframe);
-  
-var rusicModal = document.getElementById("rusic-modal");
- rusicModal.style.display = "none";
-
-// Show the iframe after 5 seconds
-setTimeout(function() {
- rusicModal.style.display = "block";
-}, 5000);
 
 				break;
 				case 2:
@@ -4402,6 +4408,7 @@ notyf.success({
   });
 
 </script>
+
 
 
 
