@@ -2,8 +2,67 @@
 
 
 <head>
+	  <meta charset="UTF-8">
 	<title>Launching Proxy..</title>
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #222;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: transparent;
+            opacity: 0;
+            border-radius: 50%;
+            animation: confetti-fall 3s infinite linear;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
+<body>
+	   <h1 style="color: #ff69b4; font-size: 48px; text-align: center;">Launching Proxy..</h1>
+    <div id="confetti-container">
+        <!-- Generate confetti dynamically using JavaScript -->
+    </div>
+    <script>
+        const colors = ['#FF5733', '#33FF57', '#5733FF', '#FF3357', '#57FF33', '#3357FF', '#FF57A2', '#A2FF57'];
+
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti-container');
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confettiContainer.appendChild(confetti);
+            setTimeout(() => {
+                confetti.remove();
+            }, 3000);
+        }
+
+        setInterval(createConfetti, 200);
+    </script>
+</body>
 <br>Launching Proxy..<br>
 <script>
 	setTimeout(function() {
