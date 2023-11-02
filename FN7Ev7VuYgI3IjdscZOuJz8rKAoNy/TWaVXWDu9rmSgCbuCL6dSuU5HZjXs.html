@@ -149,6 +149,22 @@ console.log(URL)
 			data = csspatch
 
 			var javapatch = data.replace(javascriptRegex, function(match, capturedUrl) {
+				var allowedExtensions = [".ico", ".svg", ".png", ".jpg", ".jpeg"];
+
+// Check if the capturedUrl has one of the allowed extensions
+var hasAllowedExtension = allowedExtensions.some(function(extension) {
+    return capturedUrl.endsWith(extension);
+});
+
+// Check if the first character of capturedUrl is '/'
+if (capturedUrl.charAt(0) === '/') {
+capturedUrl = UTF8 + capturedUrl;
+	return capturedUrl
+} else if (hasAllowedExtension) {
+    return capturedUrl
+}
+				
+				
   if (httpRegex.test(capturedUrl)) {
 	  var enc2 = CryptoJS.AES.encrypt(capturedUrl, 'cacti.wtf').toString();
     return 'src="' + "https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=" + enc2 + '"' // Return the original match unchanged
@@ -161,6 +177,9 @@ console.log(URL)
 });
 
 			data = javapatch
+
+			
+			
 
 			
 			
