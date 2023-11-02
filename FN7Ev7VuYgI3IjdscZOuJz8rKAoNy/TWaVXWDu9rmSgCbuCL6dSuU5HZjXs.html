@@ -150,12 +150,10 @@ console.log(URL)
 
 			var javapatch = data.replace(javascriptRegex, function(match, capturedUrl) {
 				
-				var allowedExtensions = [".ico", ".svg", ".png", ".jpg", ".jpeg"];
+		var allowedExtensionsRegex = /\.(ico|svg|png|jpg|jpeg)$/;
 
-// Check if the capturedUrl has one of the allowed extensions
-var hasAllowedExtension = allowedExtensions.some(function(extension) {
-    return capturedUrl.endsWith(extension);
-});
+// Check if the capturedUrl matches the allowedExtensionsRegex
+var hasAllowedExtension = capturedUrl.match(allowedExtensionsRegex);
 
 // Check if the first character of capturedUrl is '/'
 if (capturedUrl.charAt(0) === '/') {
