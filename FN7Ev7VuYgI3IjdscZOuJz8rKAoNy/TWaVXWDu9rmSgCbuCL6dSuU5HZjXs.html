@@ -149,6 +149,7 @@ console.log(URL)
 			data = csspatch
 
 			var javapatch = data.replace(javascriptRegex, function(match, capturedUrl) {
+				
 				var allowedExtensions = [".ico", ".svg", ".png", ".jpg", ".jpeg"];
 
 // Check if the capturedUrl has one of the allowed extensions
@@ -161,6 +162,7 @@ if (capturedUrl.charAt(0) === '/') {
 capturedUrl = UTF8 + capturedUrl;
 	return capturedUrl
 } else if (hasAllowedExtension) {
+	console.log(capturedUrl + ' # ' + match )
     return capturedUrl
 }
 				
