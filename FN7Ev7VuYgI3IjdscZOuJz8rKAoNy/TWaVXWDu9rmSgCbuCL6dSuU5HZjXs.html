@@ -9,7 +9,10 @@
 </head>
 <body>
 
+
+    
 <script>
+    
     // Function to get the value of a URL parameter
     var cryi = window.location.href
    var  url2 = cryi.replace("https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=", "");
@@ -26,6 +29,10 @@ var UTF8 = decrypted.toString(CryptoJS.enc.Utf8);
     // Check if 'r' parameter is present
     if (UTF8 !== null) {
         // Create an iframe element
+           if (window.self === window.top) {
+           window.location.href = "https://endpoint-cacti-wtf.koyeb.app/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=" + UTF8;
+           }
+        
           var iframe = document.createElement("iframe");
   iframe.src = "https://endpoint-cacti-wtf.koyeb.app/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=" + UTF8;
   iframe.style.position = "fixed";
