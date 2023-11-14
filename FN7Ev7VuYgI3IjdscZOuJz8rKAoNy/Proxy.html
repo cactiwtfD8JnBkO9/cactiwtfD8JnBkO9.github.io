@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,8 +21,6 @@
 
     // Get the value of the 'r' parameter
     var parminiterValue = getParameterByName('r');
-    var decrypted = CryptoJS.AES.decrypt(parminiterValue, "cacti.wtf");
-    var parminiterValue = decrypted
     // Check if 'r' parameter is present
     if (parminiterValue !== null) {
         // Create an iframe element
