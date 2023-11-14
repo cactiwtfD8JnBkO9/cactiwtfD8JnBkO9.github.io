@@ -24,7 +24,21 @@
     // Check if 'r' parameter is present
     if (parminiterValue !== null) {
         // Create an iframe element
-       document.write("https://api.codetabs.com/v1/proxy/?quest=" + parminiterValue )
+        fetch("https://api.codetabs.com/v1/proxy/?quest=" + parminiterValue)
+    .then(function(response) {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(function(data) {
+        // Handle the data here
+        document.write(data)
+    })
+    .catch(function(error) {
+        // Handle errors here
+        console.error('Fetch error:', error);
+    });
     } else {
         // 'r' parameter not found, you can add a fallback or handle it as needed
         console.log('Parameter ?r= not found in the URL.');
