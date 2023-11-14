@@ -23,22 +23,7 @@
     var parminiterValue = getParameterByName('r');
     // Check if 'r' parameter is present
     if (parminiterValue !== null) {
-        // Create an iframe element
-        fetch(parminiterValue)
-    .then(function(response) {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text();
-    })
-    .then(function(data) {
-        // Handle the data here
-        document.write(data)
-    })
-    .catch(function(error) {
-        // Handle errors here
-        console.error('Fetch error:', error);
-    });
+        window.location.href = parminiterValue
     } else {
         // 'r' parameter not found, you can add a fallback or handle it as needed
         console.log('Parameter ?r= not found in the URL.');
