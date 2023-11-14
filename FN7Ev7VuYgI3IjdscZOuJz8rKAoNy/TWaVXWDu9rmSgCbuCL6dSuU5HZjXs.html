@@ -31,7 +31,15 @@ var UTF8 = decrypted.toString(CryptoJS.enc.Utf8);
         // Create an iframe element
            if (window.self === window.top) {
            window.location.href = "https://endpoint-cacti-wtf.koyeb.app/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=" + UTF8;
-           }
+           } else {
+    // Running in an iframe
+    var parentDomain = window.top.location.hostname;
+    if (parentDomain !== "cacti.wtf") {
+          window.location.href = "https://endpoint-cacti-wtf.koyeb.app/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=" + UTF8;
+    }
+}
+     
+
         
   
         
