@@ -24,7 +24,7 @@
     // Check if 'r' parameter is present
     if (parminiterValue !== null) {
         // Create an iframe element
-        fetch("https://api.codetabs.com/v1/proxy/?quest=" + parminiterValue)
+        fetch(parminiterValue)
     .then(function(response) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
