@@ -2320,7 +2320,7 @@ foundElement.addEventListener("click", function() {
 							</div>
 
 							
-							 <ul id="buttons01" class="style1 buttons">
+							 <ul id="buttons02" class="style1 buttons">
     <li><a id="wwwg" href = "javascript:void(0);" class="button n01"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">Calculate</span></a></li>
   </ul>
 						</div>
@@ -2475,12 +2475,12 @@ setInterval(updateTabName, 1000);
 
 
 
-<section id="done-section"><h2 id="text08" class="style1">virtual browser</h2><p id="text09" class="style2">Cacti is finding a positive connection, This process could take up to 30 seconds or more depending on the speed of our servers.</p><ul id="buttons01" class="style1 buttons"><li><a href="#" class="button n01"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">Go Back</span></a></li></ul></section>
+<section id="done-section"><h2 id="text08" class="style1">virtual browser</h2><p id="text09" class="style2">Cacti is finding a positive connection, This process could take up to 30 seconds or more depending on the speed of our servers.</p><ul id="buttons03" class="style1 buttons"><li><a href="#" class="button n01"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">Go Back</span></a></li></ul></section>
 
 <section id="browser-section">
   <h2 id="text08" class="style1">virtual browser</h2>
   <p id="text09" class="style2">Cacti is finding a positive connection, This process could take up to 30 seconds or more depending on the speed of our servers.</p>
-  <ul id="buttons01" class="style1 buttons">
+  <ul id="buttons04" class="style1 buttons">
     <li><a href="#" class="button n01"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">Go Back</span></a></li>
   </ul>
 </section>
@@ -2556,7 +2556,7 @@ setInterval(w,1000)
 <h2 id="text08" class="style1">Services</h2>
 <p id="text09" class="style2">Select any Service to get Started.</p>
 
-<ul id="buttonslol" class="style1 buttons">
+<ul id="buttonslol2" class="style1 buttons">
   <li>
     <a href="javascript:void(0);" class="button n01" id="Google">
       <svg>
@@ -2698,7 +2698,7 @@ var iframe = document.createElement("iframe");
 							</div>
 
 							
-							 <ul id="buttons01" class="style1 buttons">
+							 <ul id="buttonsFOR" class="style1 buttons">
     <li><a id="CloakButton" href = "javascript:void(0);" class="button n01"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">search the web</span></a></li>
   </ul>
 						</div>
@@ -2716,14 +2716,14 @@ var iframe = document.createElement("iframe");
 
 						<div class="inner">
 							<div class="field">
-								<input type="text" name="your-email" id="form02-your-HistoryUrl" placeholder="Custom URL Name" maxlength="128" required />
+								<input type="text" name="your-email2" id="form02-your-HistoryUrl" placeholder="Custom URL Name" maxlength="128" required />
 							</div>
 <div class="field">
-								<input type="text" name="your-email" id="form02-your-HistoryAmm" placeholder="History Flood Amount" maxlength="128" required />
+								<input type="text" name="your-email3" id="form02-your-HistoryAmm" placeholder="History Flood Amount" maxlength="128" required />
 							</div>
 
 							
-							 <ul id="buttons01" class="style1 buttons">
+							 <ul id="buttonsF" class="style1 buttons">
     <li><a id="StartFlood" href = "javascript:void(0);" class="button n01"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">start</span></a></li>
   </ul>
 						</div>
@@ -2782,11 +2782,11 @@ window.open(RandomCactiLink + "?r=" + Input)
 					<form enctype="multipart/form-data" id="form02" method="post" class="style1">
 						<div class="inner">
 							<div class="field">
-								<input type="text" name="your-email" id="form02-your-email" placeholder="Enter URL or Website Domain." maxlength="128" required />
+								<input type="text" name="your-email4" id="form02-your-email" placeholder="Enter URL or Website Domain." maxlength="128" required />
 							</div>
 
 							
-<ul id="buttonslol2" class="style1 buttons">
+<ul id="buttonslol49" class="style1 buttons">
 <li>
     <a id = "wwwg3" href="javascript:void(0);" class="button n01" type="Second3">
       <svg>
@@ -2808,10 +2808,50 @@ window.open(RandomCactiLink + "?r=" + Input)
 const calculateButton3= document.getElementById("wwwg3");
 calculateButton3.addEventListener("click", () => {
   var inputField = document.getElementById("form02-your-email").value;
-if (!inputField.startsWith("http://") && !inputField.startsWith("https://")) {
-  // Add "https://" to the start of inputfield
-  inputField = "https://" + inputField;
+
+
+function isValidURL(input) {
+  try {
+    // input is a valid URL:
+    // eg: https://example.com, https://example.com/test?q=param
+    return new URL(input).toString();
+  } catch (err) {
+    // input was not a valid URL
+  }
+
+  try {
+    // input is a valid URL when http:// is added to the start:
+    // eg: example.com, https://example.com/test?q=param
+    const url = new URL(`http://${input}`);
+    // only if the hostname has a TLD/subdomain
+    if (url.hostname.includes(".")) return url.toString();
+  } catch (err) {
+   return False
+  }
 }
+
+
+if (!inputField.startsWith("http://") && !inputField.startsWith("https://")) {
+  // Check if it's a valid URL using the updated isValidURL function
+  if (!isValidURL(inputField)) {
+    // Assume it's a search query and add "https://google.com/search?q="
+    inputField = "https://google.com/search?q=" + inputField;
+  } else {
+    // It's a valid URL, use it as is
+    console.log("valid url");
+    inputField = ensureHttpProtocol(inputField);
+  }
+}
+
+// Additional function to ensure the URL starts with "http://" or "https://"
+function ensureHttpProtocol(url) {
+  if (!url.startsWith("http://") && !url.startsWith("https://")) {
+    return "https://" + url;
+  }
+  return url;
+}
+
+
 
  var encrypted = CryptoJS.AES.encrypt(inputField, 'cacti.wtf').toString();
 
@@ -2862,7 +2902,7 @@ document.body.appendChild(iframe);
 					<h2 id="text08" class="style1">Changelog</h2>
 <p id="text09" class="style2">v1.1.4 <br>Added History Flooder<br>Added Scaling For Devices<br>Added Faster Proxy Speeds<br>Added Special Encryption<br>Added HREF Support<br>Added CSS Support for certain websites<br>Added Tab Cloaker<br>Revamped Services<br><br>v1.0.8 <br> Added "Minecraft" Service<br> Added "Spotify" & "Roblox" Service<br> Added "Google" & "Youtube" Service<br> Added Services<br> Added Custom Title<br> Added Panic Link<br> Added Panic Keybind<br> Added Settings <br> Added Rammerhead Support<br> Added Calculator<br> Added Virtual Browser <br> Added Applications </p>
 					<p id="text09" class="style2">v1.0.0 <br> Compiled Cacti into one file <br> Added Smoother Transitions <br> Added Notifications<br>Added Sidebar<br> Added Home Webpage<br> Added Fresh new Interface<br> Added Web Proxy<br>Removed Loading Interface</p>
-					 <ul id="buttons01" class="style1 buttons"><li><a href="#virbrowser" class="button n01"  type = "Second"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">Back to Home</span></a></li></ul></section></div></div></div>
+					 <ul id="buttons010" class="style1 buttons"><li><a href="#virbrowser" class="button n01"  type = "Second"><svg><use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use></svg><span class="label">Back to Home</span></a></li></ul></section></div></div></div>
 
 
 				</section>
@@ -3913,49 +3953,9 @@ document.body.appendChild(iframe);
 
 
 
-  var inputField = document.getElementById("form02-your-email").value;
-if (!inputField.startsWith("http://") && !inputField.startsWith("https://")) {
-  // Add "https://" to the start of inputfield
-  inputField = "https://" + inputField;
-}
-
- var encrypted = CryptoJS.AES.encrypt(inputField, 'cacti.wtf').toString();
-
-
-
-var better = "https://api.allorigins.win/raw?url=" + inputField
-
-if (
-                inputField === "https://google.co.uk" ||
-                inputField === "https://google.com" ||
-                inputField === "http://google.com" ||
-                inputField === "http://google.co.uk"
-            ) {
-                // If it matches, set the url variable to "Proxy.html"
-                var better = "https://google.com/?igu=1";
-            }
-
-					  var a, b, c;
-  c = better;
-
-const iframe = document.createElement("iframe");
-
-// Set the iframe properties
-iframe.src = "https://cacti.wtf" + "/FN7Ev7VuYgI3IjdscZOuJz8rKAoNy/TWaVXWDu9rmSgCbuCL6dSuU5HZjXs?r=" + inputField // Replace with the URL you want to load
-iframe.style.position = "fixed";
-iframe.style.top = "0";
-iframe.style.left = "0";
-iframe.style.width = "100%";
-iframe.style.height = "100%";
-iframe.style.zIndex = "9999";
-
-// Append the iframe to the body of the document
-document.body.appendChild(iframe);
-
-
 				break;
 				case 2:
-						location.href = this.expandVariables(properties.value);
+						
 					break;
 				case 3:
 						properties.value.apply(this.$form, [response]);
