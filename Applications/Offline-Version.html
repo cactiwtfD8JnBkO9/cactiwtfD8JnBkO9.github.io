@@ -2449,9 +2449,9 @@ notyf.success({
             if (panicKey && event.key === panicKey) {
                 const iframe = document.getElementById("iframe-container");
                 const paniclinkff = localStorage.getItem("link")
-            window.open("https://" + paniclinkff, '_blank');
-            window.location.href = "https://" + paniclinkff
-            document.title = "https://" + paniclinkff
+            window.open(iframe.src, '_blank');
+            window.location.href = iframe.src
+            document.title = iframe.src
                 // Toggle the visibility of the iframe
                 if (iframe.style.display === "none") {
                     iframe.style.display = "block";
