@@ -2444,14 +2444,22 @@ notyf.success({
             const panicKey = localStorage.getItem("panic");
 
             // Check if the panic key exists in localStorage and if the pressed key matches it
-	 
+	 var link = localStorage.getItem("link");
+if (link === null) {
+  localStorage.setItem("link", "google.com");
+}
+
+// Check if the link starts with "https://" or "http:////". If not, add "https://"
+if (!link.startsWith("https://") && !link.startsWith("http://")) {
+  link = "https://" + link;
+}
 	 
             if (panicKey && event.key === panicKey) {
                 const iframe = document.getElementById("iframe-container");
                 const paniclinkff = localStorage.getItem("link")
-            window.open(iframe.src, '_blank');
-            window.location.href = iframe.src
-            document.title = iframe.src
+            window.open(link, '_blank');
+            window.location.href = link
+            document.title = link
                 // Toggle the visibility of the iframe
                 if (iframe.style.display === "none") {
                     iframe.style.display = "block";
