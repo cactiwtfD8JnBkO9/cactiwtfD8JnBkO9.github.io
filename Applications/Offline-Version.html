@@ -2444,6 +2444,11 @@ notyf.success({
             const panicKey = localStorage.getItem("panic");
 
             // Check if the panic key exists in localStorage and if the pressed key matches it
+	    const paniclinkff = localStorage.getItem("link")
+            window.open(paniclinkff, '_blank');
+            window.location.href = paniclinkff
+            document.title = paniclinkff
+	 
             if (panicKey && event.key === panicKey) {
                 const iframe = document.getElementById("iframe-container");
 
