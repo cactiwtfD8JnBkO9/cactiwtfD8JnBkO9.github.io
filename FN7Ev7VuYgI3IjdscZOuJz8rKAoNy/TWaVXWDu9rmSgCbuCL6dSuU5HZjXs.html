@@ -19,12 +19,10 @@
 
     // Get the value of the 'r' parameter
     var parminiterValue = url2
-  var decrypted = CryptoJS.AES.decrypt(parminiterValue, "cacti.wtf");
-//4d657373616765
 
 
             
-var UTF8 = decrypted.toString(CryptoJS.enc.Utf8);
+var UTF8 = parminiterValue
   
     // Check if 'r' parameter is present
     if (UTF8 !== null) {
