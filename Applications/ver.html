@@ -2985,9 +2985,18 @@ fetch('https://cacti.wtf/Applications/securitycodeauth.txt')
     
     // Check if inputFieldTest is in the list
     if (list.includes(document.getElementById("form05-email").value)) {
-      console.log('hey');
+               notyf.success({
+    message: 'Authentication code is valid!',
+    dismissible: true,
+  duration: 5000
+  });
+        window.location.href = window.location.origin
     } else {
-      notyf.error('This key is invalid or has already expired.');
+               notyf.error({
+    message: 'Authentication code is invalid or has expired.',
+    dismissible: true,
+  duration: 5000
+  });
     }
   })
   .catch(error => {
