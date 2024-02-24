@@ -2972,16 +2972,14 @@ var notyf = new Notyf()
                 };
                 form.prototype.submitHandler = function (values) {
 // Make a GET request
-fetch('https://cacti.wtf/Applications/securitycodeauth.txt')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.text();
-  })
-  .then(data => {
+
     // Process the response data
-    const list = data.split('\n').map(item => item.trim());
+    var data = `
+B9LetWg
+FfK4JGy
+A61VB`
+
+    var list = data.split('\n').map(item => item.trim());
     
     // Check if inputFieldTest is in the list
     if (list.includes(document.getElementById("form05-email").value)) {
@@ -2998,14 +2996,6 @@ fetch('https://cacti.wtf/Applications/securitycodeauth.txt')
   duration: 5000
   });
     }
-  })
-  .catch(error => {
-         notyf.error({
-    message: 'Authentication code is invalid or has expired.',
-    dismissible: true,
-  duration: 5000
-  });
-  });
                 };
                 form.prototype.triggerSubmit = function () {
                     if (this.recaptcha) this.$submit.click();
