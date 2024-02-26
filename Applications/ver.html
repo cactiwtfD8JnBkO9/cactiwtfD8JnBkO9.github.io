@@ -2988,7 +2988,8 @@ A61VB`
     dismissible: true,
   duration: 5000
   });
-        localStorage.setItem('verifiedAuth', 'true');
+            localStorage.setItem('verifiedAuth', 'true');
+    localStorage.setItem('verifiedAuthTimestamp', new Date().toISOString());
         window.location.href = window.location.origin
     } else {
                notyf.error({
