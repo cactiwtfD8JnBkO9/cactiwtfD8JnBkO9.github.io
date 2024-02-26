@@ -2983,14 +2983,17 @@ A61VB`
     
     // Check if inputFieldTest is in the list
     if (list.includes(document.getElementById("form05-email").value)) {
+        function setVerifiedAuth() {
+    localStorage.setItem('verifiedAuth', 'true');
+    localStorage.setItem('verifiedAuthTimestamp', new Date().toISOString());
+}
+        setVerifiedAuth()
                notyf.success({
     message: 'Authentication code is valid!',
     dismissible: true,
   duration: 5000
   });
-            localStorage.setItem('verifiedAuth', 'true');
-    localStorage.setItem('verifiedAuthTimestamp', new Date().toISOString());
-        window.location.href = window.location.origin
+        SetTimeout(function() { window.location.href = window.location.origin },3000)
     } else {
                notyf.error({
     message: 'Authentication code is invalid or has expired.',
