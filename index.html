@@ -75,14 +75,23 @@
     </div>
     <script>
         // Check if the localStorage item 'verifiedAuth' is undefined, false, or not true
-if (!localStorage.getItem('verifiedAuth') || localStorage.getItem('verifiedAuth') === 'false') {
+        function isExpired(timestamp) {
+    if (!timestamp) {
+        return true; // If no timestamp is set, consider it expired
+    }
+    const now = new Date();
+    const lastSet = new Date(timestamp);
+    const oneDayInMillis = 24 * 60 * 60 * 1000; // One day in milliseconds
+    return now - lastSet > oneDayInMillis;
+}
+        const verifiedAuth = localStorage.getItem('verifiedAuth');
+const lastSetTimestamp = localStorage.getItem('verifiedAuthTimestamp');
+if (!verifiedAuth || verifiedAuth === 'false' || isExpired(lastSetTimestamp)) {
     // Redirect to Applications/ver
     window.location.href = 'Applications/ver';
 } else {
-    // Set 'verifiedAuth' to false
-    localStorage.setItem('verifiedAuth', 'false');
+    
 }
-
         document.getElementById("download").addEventListener("click", () => {
  const randomFileName = Math.random().toString(36).substring(7)+Math.random().toString(36).substring(7)+Math.random().toString(36).substring(7);
 
