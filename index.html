@@ -87,8 +87,19 @@
         const verifiedAuth = localStorage.getItem('verifiedAuth');
 const lastSetTimestamp = localStorage.getItem('verifiedAuthTimestamp');
 if (!verifiedAuth || verifiedAuth === 'false' || isExpired(lastSetTimestamp)) {
-    // Redirect to Applications/ver
-    window.location.href = 'Applications/ver';
+        function generateRandomHash() {
+      let hash = '';
+      const characters = 'abcdef1234567890';
+
+      // Generate random characters until the hash reaches 50 characters
+      for (let i = 0; i < 50; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        hash += characters.charAt(randomIndex);
+      }
+
+      return hash;
+    }
+    window.location.href = generateRandomHash()
 } else {
     
 }
