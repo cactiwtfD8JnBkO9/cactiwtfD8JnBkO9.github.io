@@ -1011,7 +1011,15 @@ input::-webkit-calendar-picker-indicator {
 		display: block;
 		position: relative;
 	}
-	
+	  #fullscreen-iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 999999;
+  }
 	h1 span[style],
 	h2 span[style],
 	h3 span[style],
@@ -1910,6 +1918,81 @@ proxyInput.addEventListener("focus", function () {
   });
 });
 
+</script>
+<script>
+  var loadedBefore = false; // Flag to track if the iframe has been loaded before
+
+  // Function to create the full-screen iframe
+  function createFullscreenIframe(url) {
+    // Create iframe element
+    var iframe = document.createElement('iframe');
+    iframe.id = 'fullscreen-iframe';
+    iframe.src = url;
+    iframe.style.zIndex = "999999";
+
+
+    // Append iframe to body
+    document.body.appendChild(iframe);
+
+    // Disable scrolling and scrollbars
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+
+  // Function to remove the full-screen iframe
+  function removeFullscreenIframe() {
+    var iframe = document.getElementById('fullscreen-iframe');
+    if (iframe) {
+      iframe.parentNode.removeChild(iframe);
+      // Enable scrolling
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+  }
+
+    // When the iframe loads, enable scrolling and check the URL
+    $(iframe).on('load', function() {
+      if (loadedBefore) {
+        // Perform action if loaded before
+            localStorage.setItem('verifiedAuth', 'true');
+           localStorage.setItem('verifiedAuthTimestamp', new Date().toISOString());
+        removeFullscreenIframe()
+      } else {
+        // Set flag to true after the first load
+        loadedBefore = true;
+      }
+    });
+  }
+
+  // Function to check URL
+        function isExpired(timestamp) {
+    if (!timestamp) {
+        return true; // If no timestamp is set, consider it expired
+    }
+    const now = new Date();
+    const lastSet = new Date(timestamp);
+    const oneDayInMillis = 24 * 60 * 60 * 1000; // One day in milliseconds
+    return now - lastSet > oneDayInMillis;
+}
+
+        const verifiedAuth = localStorage.getItem('verifiedAuth');
+const lastSetTimestamp = localStorage.getItem('verifiedAuthTimestamp');
+if (!verifiedAuth || verifiedAuth === 'false' || isExpired(lastSetTimestamp)) {
+        function generateRandomHash() {
+      let hash = '';
+      const characters = 'abcdef1234567890';
+
+      // Generate random characters until the hash reaches 50 characters
+      for (let i = 0; i < 50; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        hash += characters.charAt(randomIndex);
+      }
+
+      return hash;
+    }
+    createFullscreenIframe('https://cacti.wtf/' + generateRandomHash());
+} else {
+    
+}
 </script>
 <script>
 function updateTabName() {
