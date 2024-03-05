@@ -1632,6 +1632,7 @@ input::-webkit-calendar-picker-indicator {
 					<form id="form03" method="post" class="style1">
 						<div class="inner">
 <datalist id="asuggestions">
+	 <option value="cacti://local-proxies" label="Premium Proxy Pool [Undetectable & Unblocked]"></option>
          <option value="https://www.awesomegeography.com/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=" label="Ultraviolet Realistic Proxy [Unblocked]"></option>
         <option value="https://www.classicinventions.com/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=" label="Ultraviolet Realistic Proxy [Unblocked]"></option>
     <option value="https://preset.fergus.wtf/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=" label="Ultraviolet Proxy [Unblocked]"></option>
@@ -3279,7 +3280,20 @@ window.open(httpproxylinkgen + inputField)
 }
 else if (values["id"] === "form03") {
 localStorage.setItem("name", values["fname"]  || 'Cacti')
-localStorage.setItem("httpproxy2", values["email"]  || 'https://www.awesomegeography.com/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=')
+	    if (values['email'] === "cacti://local-proxies") {
+        const strings = ['https://9zpuby87zt3bz7ago936fuvqtahkw2ei6stembuiqdy091ly2.geekgalaxy.com/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=',
+			 'https://broken-test-server.stufftoread.com/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=',
+			 'https://dtisxkjww6knw0w.myeffect.net/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=',
+			 'https://science-testing.hosthampster.com/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=',
+		         'https://dynamicembeds.read-books.org/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=',
+	                 'https://blogging-cookies-embed.read-books.org/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=',
+	                 'https://shortend-url-sgy3bzax.access.ly/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r='];
+        const randomIndex = Math.floor(Math.random() * strings.length);
+        localStorage.setItem("httpproxy2", strings[randomIndex])
+    } else {
+        localStorage.setItem("httpproxy2", values["email"]  || 'https://www.awesomegeography.com/uv/service/hvtrs8%2F-wuw%2Ccccvi%2Cwvf-FL7Gv5VwYeI1IhdqcXOwJx8pKCoLy-Ppozy?r=')
+    }
+
 localStorage.setItem("cloakname", values["company"]  || 'Cacti')
 notyf.success({
     message: 'Changes have been successfully saved!',
