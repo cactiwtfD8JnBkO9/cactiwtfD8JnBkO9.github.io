@@ -37,6 +37,7 @@
             const newTab = window.open('about:blank', '_blank');
             newTab.document.write(decrypted);
             newTab.document.close();
+            window.location.href = "retry"
           } else {
             window.location.href = "retry"
           }
@@ -61,10 +62,7 @@
     const authToken = authTokenInput.value.trim();
     dialog.open = false;
     setTimeout(function() {
-    if (authToken) {
-      requestRun(authToken);
-    }
-    window.location.href = "retry"
+    requestRun(authToken);
     }, 1500)
   });
 </script>
