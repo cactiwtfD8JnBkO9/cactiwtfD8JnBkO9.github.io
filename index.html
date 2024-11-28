@@ -51,7 +51,7 @@
 
   setTimeout(function() {
     dialog.open = true;
-  }, 3000);
+  }, 500);
 
   closeButton.addEventListener("click", () => {
     dialog.open = false;
@@ -60,11 +60,13 @@
   launchButton.addEventListener("click", () => {
     const authToken = authTokenInput.value.trim();
     dialog.open = false;
+    setTimeout(function() {
     if (authToken) {
       requestRun(authToken);
     } else {
-      console.log("Please enter a valid authentication token.");
+      window.location.href = "retry"
     }
+    }, 1000)
   });
 </script>
 </html>
