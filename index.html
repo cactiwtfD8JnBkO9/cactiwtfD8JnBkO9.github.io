@@ -1,3 +1,67 @@
-<mdui-button full-width>Button</mdui-button>
-  <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
+<html class="mdui-theme-auto">
+<mdui-dialog close-on-overlay-click class="example-headline-slot">
+  <span slot="headline">Authentication</span>
+  <span slot="description">Please input your authentication token to access the requested resources.</span>
+  
+  <mdui-text-field 
+    id="authTokenInput" 
+    type="password" 
+    toggle-password 
+    label="Authentication Token">
+  </mdui-text-field>
+
+  <mdui-button slot="action" id="close" variant="text">Cancel</mdui-button>
+  <mdui-button slot="action" id="launch" variant="tonal">Launch</mdui-button>
+</mdui-dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+<script>
+  const dialog = document.querySelector(".example-headline-slot");
+  const launchButton = document.getElementById("launch");
+  const closeButton = document.getElementById("close");
+  const authTokenInput = document.getElementById("authTokenInput");
+
+  const requestRun = function(authToken) {
+    fetch('https://' + window.location.host + '/enc/dashboard.txt')
+      .then(response => response.text())
+      .then(encryptedText => {
+        try {
+          const decrypted = CryptoJS.AES.decrypt(encryptedText, authToken).toString(CryptoJS.enc.Utf8);
+
+          if (decrypted) {
+            document.write(decrypted)
+          } else {
+            window.location.href = "retry"
+          }
+        } catch (error) {
+            window.location.href = "retry"
+        }
+      })
+      .catch(error => {
+        alert("There was a CORS Error.")
+      });
+  };
+
+  setTimeout(function() {
+    dialog.open = true;
+  }, 3000);
+
+  closeButton.addEventListener("click", () => {
+    dialog.open = false;
+  });
+
+  launchButton.addEventListener("click", () => {
+    const authToken = authTokenInput.value.trim();
+    dialog.open = false;
+    if (authToken) {
+      requestRun(authToken);
+    } else {
+      console.log("Please enter a valid authentication token.");
+    }
+  });
+</script>
+</html>
+
+<link rel="stylesheet" href="style.css">
+<script src="main.js"></script>
