@@ -7,55 +7,38 @@
 </head>
 <body>
     <h1>Text Input Encryption and Decryption</h1>
-
     <label for="inputText">Enter text to encrypt:</label>
     <textarea id="inputText" rows="4" cols="50" placeholder="Type something here..."></textarea><br><br>
-
     <label for="encryptionKey">Enter encryption key:</label>
     <input type="text" id="encryptionKey" placeholder="Enter key here..."><br><br>
-
     <button id="encryptBtn">Encrypt Text</button>
-
     <p><strong>Encrypted Text:</strong></p>
     <textarea id="encryptedOutput" rows="4" cols="50" readonly wrap="soft"></textarea><br><br>
-
     <hr>
-
     <h2>Decrypt Encrypted Text</h2>
-
     <label for="encryptedInput">Enter encrypted text:</label>
     <textarea id="encryptedInput" rows="4" cols="50" placeholder="Paste encrypted text here..." wrap="soft"></textarea><br><br>
-
     <label for="decryptionKey">Enter decryption key:</label>
     <input type="text" id="decryptionKey" placeholder="Enter decryption key"><br><br>
-
     <button id="decryptBtn">Decrypt Text</button>
-
     <p><strong>Decrypted Text:</strong></p>
     <textarea id="decryptedOutput" rows="4" cols="50" readonly wrap="soft"></textarea>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script>
         let encryptedText = '';
-
         document.getElementById("encryptBtn").addEventListener("click", function() {
             var inputText = document.getElementById("inputText").value;
             var key = document.getElementById("encryptionKey").value;
-
             if (inputText && key) {
                 encryptedText = CryptoJS.AES.encrypt(inputText, key).toString();
-
                 document.getElementById("encryptedOutput").value = encryptedText;
             }
         });
-
         document.getElementById("decryptBtn").addEventListener("click", function() {
             var encryptedInput = document.getElementById("encryptedInput").value;
             var decryptionKey = document.getElementById("decryptionKey").value;
-
             if (encryptedInput && decryptionKey) {
                 var decrypted = CryptoJS.AES.decrypt(encryptedInput, decryptionKey).toString(CryptoJS.enc.Utf8);
-
                 document.getElementById("decryptedOutput").value = decrypted;
             } else {
                 document.getElementById("decryptedOutput").value = "please enter text to decrypt";
