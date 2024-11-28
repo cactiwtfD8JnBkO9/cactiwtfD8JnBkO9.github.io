@@ -63,9 +63,8 @@
     setTimeout(function() {
     if (authToken) {
       requestRun(authToken);
-    } else {
-      window.location.href = "retry"
     }
+    window.location.href = "retry"
     }, 1500)
   });
 </script>
