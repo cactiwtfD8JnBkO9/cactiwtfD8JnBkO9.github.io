@@ -9,7 +9,7 @@
     <h1>Text Input Encryption and Decryption</h1>
 
     <label for="inputText">Enter text to encrypt:</label>
-    <input type="text" id="inputText" placeholder="Type something here..."><br><br>
+    <textarea id="inputText" rows="4" cols="50" placeholder="Type something here..."></textarea><br><br>
 
     <label for="encryptionKey">Enter encryption key:</label>
     <input type="text" id="encryptionKey" placeholder="Enter key here..."><br><br>
@@ -17,14 +17,14 @@
     <button id="encryptBtn">Encrypt Text</button>
 
     <p><strong>Encrypted Text:</strong></p>
-    <textarea id="encryptedOutput" rows="4" cols="50" readonly></textarea><br><br>
+    <textarea id="encryptedOutput" rows="4" cols="50" readonly wrap="soft"></textarea><br><br>
 
     <hr>
 
     <h2>Decrypt Encrypted Text</h2>
 
     <label for="encryptedInput">Enter encrypted text:</label>
-    <textarea id="encryptedInput" rows="4" cols="50" placeholder="Paste encrypted text here..."></textarea><br><br>
+    <textarea id="encryptedInput" rows="4" cols="50" placeholder="Paste encrypted text here..." wrap="soft"></textarea><br><br>
 
     <label for="decryptionKey">Enter decryption key:</label>
     <input type="text" id="decryptionKey" placeholder="Enter decryption key"><br><br>
@@ -32,7 +32,7 @@
     <button id="decryptBtn">Decrypt Text</button>
 
     <p><strong>Decrypted Text:</strong></p>
-    <textarea id="decryptedOutput" rows="4" cols="50" readonly></textarea>
+    <textarea id="decryptedOutput" rows="4" cols="50" readonly wrap="soft"></textarea>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script>
@@ -56,7 +56,7 @@
             if (encryptedInput && decryptionKey) {
                 var decrypted = CryptoJS.AES.decrypt(encryptedInput, decryptionKey).toString(CryptoJS.enc.Utf8);
 
-                document.getElementById("decryptedOutput").value = decrypted
+                document.getElementById("decryptedOutput").value = decrypted;
             } else {
                 document.getElementById("decryptedOutput").value = "please enter text to decrypt";
             }
