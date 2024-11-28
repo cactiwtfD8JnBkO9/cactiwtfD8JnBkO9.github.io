@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="mdui-theme-auto">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Issue</title>
   <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+  <script>
+    setTimeout(function() {
+      const progressBar = document.querySelector('mdui-linear-progress');
+      progressBar.style.opacity = '0';
+      setTimeout(function() {
+        window.location.href = window.location.host;
+      }, 500);
+    }, 2000);
+  </script>
   <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
 
-.centered-container {
-  width: 80%;
-    justify-content: center;
-  align-items: center;
-}
-
+    mdui-linear-progress {
+      width: 30%;
+      transition: opacity 0.5s ease;
+    }
   </style>
 </head>
 <body>
-  <div class="centered-container">
-    <mdui-linear-progress></mdui-linear-progress>
-  </div>
-
-  <script src="main.js"></script>
+  <mdui-linear-progress></mdui-linear-progress>
 </body>
 </html>
