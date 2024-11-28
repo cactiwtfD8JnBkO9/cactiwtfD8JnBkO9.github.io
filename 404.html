@@ -8,11 +8,14 @@
   <script>
     setTimeout(function() {
       const progressBar = document.querySelector('mdui-linear-progress');
-      progressBar.style.opacity = '0';
+      progressBar.style.opacity = '1';
       setTimeout(function() {
-        window.location.href = "https://" + window.location.host;
-      }, 500);
-    }, 2000);
+        progressBar.style.opacity = '0';
+        setTimeout(function() {
+          window.location.href = "https://" + window.location.host;
+        }, 500);
+      }, 2000);
+    }, 500);
   </script>
   <style>
     body {
@@ -25,6 +28,7 @@
 
     mdui-linear-progress {
       width: 30%;
+      opacity: 0; /* Initially invisible */
       transition: opacity 0.5s ease;
     }
   </style>
