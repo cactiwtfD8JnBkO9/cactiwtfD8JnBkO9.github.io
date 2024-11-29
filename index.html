@@ -22,6 +22,34 @@
 
 <mdui-snackbar closeable class="example-closeable">Authentication Failed.</mdui-snackbar>
 
+  <mdui-snackbar class="confirm-exit">
+  Remove this webpage from browsing history?
+  <mdui-button slot="action" variant="text">Confirm</mdui-button>
+</mdui-snackbar>
+  
+<script>
+  const snackbar = document.querySelector(".example-action-slot");
+
+
+  function addEvent(obj, evt, fn) {
+    if (obj.addEventListener) {
+        obj.addEventListener(evt, fn, false);
+    }
+    else if (obj.attachEvent) {
+        obj.attachEvent("on" + evt, fn);
+    }
+}
+addEvent(window,"load",function(e) {
+    addEvent(document, "mouseout", function(e) {
+        e = e ? e : window.event;
+        var from = e.relatedTarget || e.toElement;
+        if (!from || from.nodeName == "HTML") {
+            snackbar.open = true
+        }
+    });
+});
+</script>
+
 <script>
   const dialog = document.querySelector(".example-headline-slot");
   const launchButton = document.getElementById("launch");
