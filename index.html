@@ -37,7 +37,7 @@
             const newTab = window.open('about:blank', '_blank');
             newTab.document.write(decrypted);
             newTab.document.close();
-            window.location.href = "retry"
+            location.replace('https://classroom.google.com')
           } else {
             window.location.href = "retry"
           }
