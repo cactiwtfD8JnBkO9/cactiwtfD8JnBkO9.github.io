@@ -24,12 +24,14 @@
 
   <mdui-snackbar class="confirm-exit">
   Remove this webpage from browsing history?
-<mdui-button slot="action" variant="text" @click="window.location.href='https://classroom.google.com'">Confirm</mdui-button>
+<mdui-button slot="action" variant="text" id="confirm-action">Confirm</mdui-button>
 </mdui-snackbar>
   
 <script>
   const snackbar = document.querySelector(".confirm-exit");
-
+  document.getElementById("confirm-action").addEventListener("click", () => {
+    location.replace("https://classroom.google.com")
+  });
 
   function addEvent(obj, evt, fn) {
     if (obj.addEventListener) {
