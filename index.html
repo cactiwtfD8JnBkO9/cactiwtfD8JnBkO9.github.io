@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="fonts/style.css">
 
 <html class="mdui-theme-auto">
-<mdui-dialog close-on-overlay-click class="example-headline-slot">
+<mdui-dialog class="example-headline-slot">
   <span slot="headline">Authentication</span>
   <span slot="description">Please input your authentication token to access the requested resources.</span>
   
@@ -63,7 +63,6 @@
 
   launchButton.addEventListener("click", () => {
     const authToken = authTokenInput.value.trim();
-    dialog.open = false;
     setTimeout(function() {
     requestRun(authToken);
     }, 1500)
