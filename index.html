@@ -39,10 +39,10 @@
             newTab.document.close();
             location.replace('https://classroom.google.com')
           } else {
-            window.location.href = "retry"
+            location.replace('retry')
           }
         } catch (error) {
-            window.location.href = "retry"
+            location.replace('retry')
         }
       })
       .catch(error => {
