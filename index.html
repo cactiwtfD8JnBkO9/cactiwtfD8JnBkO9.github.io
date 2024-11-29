@@ -20,6 +20,8 @@
   <mdui-button slot="action" id="launch" variant="tonal">Launch</mdui-button>
 </mdui-dialog>
 
+<mdui-snackbar closeable class="example-closeable">Authentication Failed.</mdui-snackbar>
+
 <script>
   const dialog = document.querySelector(".example-headline-slot");
   const launchButton = document.getElementById("launch");
@@ -37,12 +39,13 @@
             const newTab = window.open('about:blank', '_blank');
             newTab.document.write(decrypted);
             newTab.document.close();
+            dialog.open = false
             location.replace('https://classroom.google.com')
           } else {
-            location.replace('retry')
+            document.querySelector(".example-closeable").open = true
           }
         } catch (error) {
-            location.replace('retry')
+            document.querySelector(".example-closeable").open = true
         }
       })
       .catch(error => {
